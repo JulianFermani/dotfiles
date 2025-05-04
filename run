@@ -1,0 +1,49 @@
+#!/usr/bin/env bash
+
+script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd )"
+
+grep=""
+dry_run="0"
+
+# Si el número de argumentos recibidos es distinto a 0 entra
+# y por cada argumento mira si corresponde alguna condición,
+# finalmente borra el argumento ya leído para utilizar el siguiente
+while [[ $# -gt 0 ]]; do
+  echo "ARG: \"$1\""
+  if [[ "$1" == "--dry" ]]; then
+    dry_run="1"
+  else
+    grep="$1"
+  fi
+  shift
+done
+
+log(){
+  if [[ $dry_run == "1" ]]; then
+    echo "[DRY_RUN]: $1"
+  else
+    echo "$1"
+  fi 
+}
+
+# LOG PARA SABER QUE METIÓ EL USUARIO
+log "RUN: env: $env -- grep: $grep"
+
+# Busca todos los ejecutables dentro del directorio runs/
+runs_dir=`find $script_dir/runs -mindepth 1 -maxdepth 1 -executable`
+
+# Por cada ejecutable encontrado en el directorio se fija
+# si coincide con el argumento de filtro que ingreso el usario,
+# si no es así lo filtra y no lo ejecuta
+for s in $runs_dir; do
+  if basename $s | grep -vq "$grep"; then
+    log "grep \"$grep\" filtered out $s"
+    continue
+  fi
+
+  log "running script: $s"
+
+  if [[ $dry_run == "0" ]]; then
+    $s
+  fi
+done

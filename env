@@ -54,5 +54,5 @@ copy() {
 }
 
 copy ./.tmux.conf $HOME/.tmux.conf
-copy ./.config/i3/conf $HOME/.config/i3/config
+copy ./.config/i3/config $HOME/.config/i3/config
 update_files ./.config $HOME/.config

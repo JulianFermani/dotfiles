@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+cd $HOME/personal/
+
+git clone https://github.com/alacritty/alacritty.git
+
+cd alacritty
+
+sudo apt install cmake g++ pkg-config libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3
+
+cargo build --release

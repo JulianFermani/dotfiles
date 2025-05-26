@@ -57,3 +57,4 @@ copy ./.tmux.conf $HOME/.tmux.conf
 copy ./.bashrc $HOME/.bashrc
 copy ./.config/i3/config $HOME/.config/i3/config
 update_files ./.config $HOME/.config
+update_files ./Pictures $HOME/Pictures

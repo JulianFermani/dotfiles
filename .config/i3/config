@@ -258,3 +258,5 @@ exec --no-startup-id $USER/personal/dotfiles/scripts/launch-bluemail.sh
 exec --no-startup-id xset s off
 exec --no-startup-id xset -dpms
 exec --no-startup-id xset s noblank
+
+exec --no-startup-id setxkbmap -layout us,latam -option grp:win_space_toggle

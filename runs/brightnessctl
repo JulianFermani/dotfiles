@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+sudo apt install brightnessctl -y
+
+sudo usermod -aG video $USER

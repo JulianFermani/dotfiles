@@ -211,26 +211,6 @@ bar {
 # ------------------------------------------
 # CUSTOM KEYS START
 # ------------------------------------------
-exec --no-startup-id nm-applet
-
-# FKeys
-# Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
-#
-# # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
-
-# Alsa audio controls.
-bindsym $mod+Shift+comma exec ~/.config/i3/scripts/alsa restore
-bindsym $mod+semicolon exec ~/.config/i3/scripts/alsa down Headphone
-bindsym $mod+comma exec ~/.config/i3/scripts/alsa up Headphone
-bindsym $mod+m move workspace to output left
-
-bindsym $mod+Shift+p exec --no-startup-id ~/.local/apps/play_next_bits
-
 # Poder usar el pad de la compu
 exec xinput set-prop "ELAN06FA:00 04F3:3140 Touchpad" "libinput Tapping Enabled" 1
 
@@ -259,4 +239,4 @@ exec --no-startup-id xset s off
 exec --no-startup-id xset -dpms
 exec --no-startup-id xset s noblank
 
-exec --no-startup-id setxkbmap -option "" -layout us,latam -option grp:win_space_toggle
+exec_always --no-startup-id setxkbmap -layout us,latam -option grp:win_space_toggle

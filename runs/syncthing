@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+sudo apt install gnupg2 curl apt-transport-https -y
+
+curl -fsSL https://syncthing.net/release-key.txt | gpg --dearmor -o /etc/apt/trusted.gpg.d/syncthing.gpg
+
+echo "deb https://apt.syncthing.net/ syncthing release" | tee /etc/apt/sources.list.d/syncthing.list
+
+sudo apt update
+
+sudo apt install syncthing
+
+sudo systemctl start syncthing@root.service
+
+sudo systemctl enable syncthing@root.service
+
+sudo systemctl status syncthing@root.service

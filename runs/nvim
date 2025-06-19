@@ -6,3 +6,9 @@ cd neovim
 
 make CMAKE_BUILD_TYPE=RelWithDebInfo
 sudo make install
+
+rm -rf $HOME/.config/nvim
+
+mkdir -p $HOME/.config/nvim
+
+ln -s $HOME/personal/dotfiles/.config/nvim $HOME/.config/nvim

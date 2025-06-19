@@ -1,3 +1,7 @@
 #!/usr/bin/env bash
 
 sudo apt install tmux
+
+rm "$HOME/.tmux.conf"
+
+ln -s "$HOME/personal/dotfiles/.tmux.conf" "$HOME/.tmux.conf"

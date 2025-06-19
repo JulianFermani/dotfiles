@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+rm "$HOME/.bashrc"
+
+ln -s "$HOME/personal/dotfiles/.bashrc" "$HOME/.bashrc"

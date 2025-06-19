@@ -235,7 +235,7 @@ bindsym Print exec flameshot gui
 
 exec --no-startup-id bash -c 'redshift -P -O 3500'
 
-exec --no-startup-id $USER/personal/dotfiles/scripts/launch-bluemail.sh
+exec --no-startup-id /snap/bin/bluemail
 
 exec --no-startup-id xset s off
 exec --no-startup-id xset -dpms

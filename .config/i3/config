@@ -212,6 +212,8 @@ bar {
 # CUSTOM KEYS START
 # ------------------------------------------
 # Poder usar el pad de la compu
+exec --no-startup-id volumeicon
+
 exec xinput set-prop "ELAN06FA:00 04F3:3140 Touchpad" "libinput Tapping Enabled" 1
 
 # Configuro mis fn functions

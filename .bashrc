@@ -10,7 +10,7 @@ case $- in
 esac
 
 # Path to your oh-my-bash installation.
-export OSH='/home/kafka/.oh-my-bash'
+export OSH='/home/batman/.oh-my-bash'
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-bash is loaded.
@@ -161,17 +161,12 @@ alias emacsnw='emacs -nw'
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
-alias keepass2john='john-the-ripper.keepass2john'
-
 alias vim='vim -u NONE'
 alias vi='vi -u NONE'
 . "$HOME/.cargo/env"
 
 export DOOMDIR=~/.doom.d
 export PATH="$HOME/.config/emacs/bin:$PATH"
-
-# Load Angular CLI autocompletion.
-source <(ng completion script)
 
 # bun
 export BUN_INSTALL="$HOME/.bun"

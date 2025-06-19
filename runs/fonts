@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+SOURCE_DIR="$HOME/personal/dotfiles/.local/share/fonts/Monaspace"
+TARGET_DIR="$HOME/.local/share/fonts/Monaspace"
+
+mkdir -p "$(dirname "$TARGET_DIR")"
+
+# Eliminar enlace o carpeta existente en destino si existe
+if [ -e "$TARGET_DIR" ] || [ -L "$TARGET_DIR" ]; then
+    rm -rf "$TARGET_DIR"
+fi
+
+ln -s "$SOURCE_DIR" "$TARGET_DIR"
+
+echo "Enlace simbólico creado:"
+echo "$TARGET_DIR -> $SOURCE_DIR"
+

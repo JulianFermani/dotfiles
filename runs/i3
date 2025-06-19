@@ -1,3 +1,9 @@
 #!/usr/bin/env bash
 
 sudo apt install i3 -y
+
+mkdir -p "$HOME/.config/i3"
+
+rm "$HOME/.config/i3/config"
+
+ln -s "$HOME/personal/dotfiles/.config/i3/config" "$HOME/.config/i3/config"

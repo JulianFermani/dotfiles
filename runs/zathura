@@ -1,3 +1,7 @@
 #!/usr/bin/env bash
 
 sudo apt install zathura -y
+
+rm -rf "$HOME/.config/zathura/"
+
+ln -s "$HOME/personal/dotfiles/.config/zathura" "$HOME/.config/zathura"

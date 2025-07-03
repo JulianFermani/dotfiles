@@ -3,7 +3,9 @@
 sudo apt install i3 -y
 
 mkdir -p "$HOME/.config/i3"
+mkdir -p "$HOME/.config/i3status"
 
 rm "$HOME/.config/i3/config"
 
 ln -s "$HOME/personal/dotfiles/.config/i3/config" "$HOME/.config/i3/config"
+ln -s "$HOME/personal/dotfiles/.config/i3status/config" "$HOME/.config/i3status/config"

@@ -25,3 +25,24 @@ keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer
 vim.keymap.set("n", "<Leader>ww", ":w<CR>", { silent = true, desc = "Guardar archivo" })
 vim.keymap.set("n", "<Leader>qq", ":q<CR>", { silent = true, desc = "Cerrar ventana" })
 vim.keymap.set("n", "<Leader>qa", ":qa!<CR>", { silent = true, desc = "Cerrar todo forzado" })
+
+-- Mappings for leetcode.nvim
+vim.api.nvim_set_keymap("n", "<leader>lr", ":Leet run<CR>", { noremap = true, silent = true, desc = "LeetCode Run" })
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>ls",
+  ":Leet submit<CR>",
+  { noremap = true, silent = true, desc = "LeetCode Submit" }
+)
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>ld",
+  ":Leet daily<CR>",
+  { noremap = true, silent = true, desc = "LeetCode Daily" }
+)
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>le",
+  ":Leet list difficulty=Easy<CR>",
+  { noremap = true, silent = true, desc = "LeetCode Easy List" }
+)
